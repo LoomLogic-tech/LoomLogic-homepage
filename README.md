@@ -26,3 +26,9 @@ pnpm dlx shadcn@latest init
 
 # 6) คำสั่งรันโปรเจกต์
 pnpm run dev
+
+# 7) ติดตั้ง .prettierrc
+pnpm add --save-dev --save-exact prettier
+pnpm exec prettier . --write
+npx prettier . --check  
+```
