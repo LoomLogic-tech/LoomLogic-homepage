@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { Menu } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Link from 'next/link';
+import { Menu } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import {
   Sheet,
   SheetTrigger,
@@ -8,7 +8,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetClose,
-} from "@/components/ui/sheet";
+} from '@/components/ui/sheet';
 
 export type NavLink = {
   label: string;
@@ -20,28 +20,28 @@ type MainNavbarProps = {
   links: NavLink[];
 };
 
-const MainNavbar = ({ brand = "LOOMLOGIC", links }: MainNavbarProps) => {
+const MainNavbar = ({ brand = 'LOOMLOGIC', links }: MainNavbarProps) => {
   return (
     <header className="fixed inset-x-0 top-0 z-20 flex justify-center px-4 pt-4 sm:px-6">
-      <div className="relative w-full max-w-5xl">
-        <div className="flex h-14 items-center justify-between rounded-2xl bg-slate-900/90 px-4 shadow-lg shadow-black/60 ring-1 ring-slate-800/80 backdrop-blur-md sm:px-6">
+      <div className="relative w-full max-w-[1280px]">
+        <div className="flex items-center justify-between rounded-[8px] bg-[linear-gradient(255deg,rgba(44,59,78,0.20)_15.53%,var(--Primary-Pri-2,rgba(163,81,57,0.20))_192.96%)] px-6 py-2 shadow-[0_4px_15px_0_var(--sds-color-background-brand-hover)] backdrop-blur-md">
           {/* Logo + Brand */}
-          <Link href="/" className="flex items-center gap-3">
-            <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-orange-400 to-orange-600 shadow-md shadow-orange-500/40">
-              <span className="text-lg font-black text-slate-950">Ø</span>
-            </div>
-            <span className="hidden text-xs font-semibold uppercase tracking-[0.35em] text-slate-100 sm:inline">
-              {brand}
-            </span>
+          <Link href="/" className="flex items-center">
+            <img
+              src="/share/navbar-logo.png"
+              alt="LoomLogic logo"
+              style={{ width: '145px', height: '48px' }}
+              className="object-contain"
+            />
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-6 text-sm font-medium text-slate-100 md:flex">
+          <nav className="hidden items-center gap-4 text-sm font-normal text-slate-100 md:flex">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-xs tracking-wide text-slate-200/90 transition hover:text-orange-300"
+                className="text-xs tracking-wide text-slate-200/90 transition hover:text-[#FFB162]"
               >
                 {link.label}
               </Link>
@@ -51,7 +51,7 @@ const MainNavbar = ({ brand = "LOOMLOGIC", links }: MainNavbarProps) => {
               asChild
               variant="outline"
               size="sm"
-              className="rounded-full border border-orange-400/80 bg-transparent px-4 py-1 text-xs font-semibold text-orange-300 hover:bg-orange-500/10 hover:text-orange-200"
+              className="rounded-[8px] border-[1.2px] border-[#FFB162] bg-transparent p-2 text-xs font-normal text-[#EEE9DF] hover:bg-[#E8E9EB]/[0.08] hover:text-[#EEE9DF]"
             >
               <Link href="#contact">Contact us</Link>
             </Button>
@@ -62,7 +62,7 @@ const MainNavbar = ({ brand = "LOOMLOGIC", links }: MainNavbarProps) => {
             <Button
               asChild
               size="sm"
-              className="rounded-full bg-orange-500 px-3 py-1 text-xs font-semibold text-slate-950 hover:bg-orange-400"
+              className="rounded-full bg-orange-500 px-3 py-1 text-xs font-normal text-slate-950 hover:bg-orange-400"
             >
               <Link href="#contact">Contact</Link>
             </Button>
