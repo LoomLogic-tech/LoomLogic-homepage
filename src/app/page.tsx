@@ -1,5 +1,3 @@
-import Image from 'next/image';
+import MainPartPage from "./main-part/page";
 
-export default function Home() {
-  return <div>test</div>;
-}
+export default MainPartPage;;
