@@ -1,4 +1,7 @@
-import MainPartPage from "./main-part/page";
+'use client';
 
-export default MainPartPage;;
+import { redirect } from 'next/navigation';
 
+export default function Home() {
+  redirect('/main-part');
+}
