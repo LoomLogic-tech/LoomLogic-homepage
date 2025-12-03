@@ -24,6 +24,6 @@ export default function ProjectCard({ title, text, image, phoneImage }: Props) {
           />
         </div>
       )}
-    </div>
+    </div> 
   );
 }
