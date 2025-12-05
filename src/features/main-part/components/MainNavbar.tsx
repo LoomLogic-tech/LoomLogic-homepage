@@ -9,6 +9,9 @@ import {
   SheetTitle,
 } from '@/components/ui/sheet';
 
+// เช็ค Path ให้ถูกนะครับ ว่า ContactModal อยู่โฟลเดอร์ไหน
+import ContactModal from '@/features/main-part/components/ContactModal';
+
 export type NavLink = {
   label: string;
   href: string;
@@ -23,9 +26,8 @@ const MainNavbar = ({ brand = 'LOOMLOGIC', links }: MainNavbarProps) => {
   return (
     <header className="fixed inset-x-0 top-0 z-20 flex justify-center px-4 pt-4 sm:px-6">
       <div className="relative w-full max-w-[1280px]">
-        {/* Navbar หลัก */}
+        {/* Navbar Container */}
         <div className="flex items-center justify-between rounded-[8px] bg-[linear-gradient(255deg,rgba(44,59,78,0.20)_15.53%,var(--Primary-Pri-2,rgba(163,81,57,0.20))_192.96%)] px-6 py-2 shadow-[0_4px_15px_0_var(--sds-color-background-brand-hover)] backdrop-blur-md">
-          
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img
@@ -36,7 +38,7 @@ const MainNavbar = ({ brand = 'LOOMLOGIC', links }: MainNavbarProps) => {
             />
           </Link>
 
-          {/* Desktop Nav */}
+          {/* ================= DESKTOP NAV ================= */}
           <nav className="hidden items-center gap-4 text-sm font-normal text-slate-100 md:flex">
             {links.map((link) => (
               <Link
@@ -48,17 +50,21 @@ const MainNavbar = ({ brand = 'LOOMLOGIC', links }: MainNavbarProps) => {
               </Link>
             ))}
 
-            <Button
-              asChild
-              variant="outline"
-              size="sm"
-              className="rounded-[8px] border-[1.2px] border-[#FFB162] bg-transparent p-2 text-xs font-normal text-[#EEE9DF] hover:bg-[#E8E9EB]/[0.08] hover:text-[#EEE9DF]"
-            >
-              <Link href="#contact">Contact us</Link>
-            </Button>
+            {/* [4] เรียกใช้ ContactModal สำหรับ Desktop และส่งปุ่มแบบเล็กเข้าไป */}
+            <ContactModal
+              triggerButton={
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="rounded-[8px] border-[1.2px] border-[#FFB162] bg-transparent px-4 py-2 text-xs font-normal text-[#EEE9DF] hover:bg-[#E8E9EB]/[0.08] hover:text-[#EEE9DF]"
+                >
+                  Contact us
+                </Button>
+              }
+            />
           </nav>
 
-          {/* Mobile Nav Trigger */}
+          {/* ================= MOBILE NAV ================= */}
           <div className="flex items-center md:hidden">
             <Sheet>
               <SheetTrigger asChild>
@@ -77,7 +83,7 @@ const MainNavbar = ({ brand = 'LOOMLOGIC', links }: MainNavbarProps) => {
                 className="
                   flex flex-col justify-start items-start
                   w-full max-w-[375px] 
-                  h-auto /* [แก้ไข] ใช้ auto เพื่อให้สูงเท่าเนื้อหาพอดี ไม่เหลือที่ว่าง */
+                  h-auto
                   mx-auto mt-4 
                   px-6 py-6
                   rounded-[8px]
@@ -88,28 +94,34 @@ const MainNavbar = ({ brand = 'LOOMLOGIC', links }: MainNavbarProps) => {
                   [&>button]:hidden
                 "
               >
-                <SheetTitle className="sr-only">Mobile Navigation Menu</SheetTitle>
+                <SheetTitle className="sr-only">
+                  Mobile Navigation Menu
+                </SheetTitle>
 
                 <div className="w-full">
                   {/* Header Row */}
                   <div className="flex items-center justify-between mb-8">
-                     <div className="flex items-center">
-                       <img
+                    <div className="flex items-center">
+                      <img
                         src="/share/navbar-logo.png"
                         alt={`${brand} logo`}
                         style={{ width: '145px', height: '48px' }}
                         className="object-contain"
                       />
                     </div>
-                    
+
                     <SheetClose asChild>
-                      <Button variant="ghost" size="icon" className="text-slate-300 hover:text-white -mr-2">
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="text-slate-300 hover:text-white -mr-2"
+                      >
                         <X className="h-6 w-6" />
                       </Button>
                     </SheetClose>
                   </div>
 
-                  {/* Links List + Contact Button */}
+                  {/* Links + Contact Button */}
                   <div className="flex flex-col gap-5 px-1">
                     {links.map((link) => (
                       <SheetClose asChild key={link.href}>
@@ -122,14 +134,8 @@ const MainNavbar = ({ brand = 'LOOMLOGIC', links }: MainNavbarProps) => {
                       </SheetClose>
                     ))}
 
-                    <SheetClose asChild>
-                      <Button
-                        asChild
-                        className="w-full rounded-xl border border-[#FFB162] bg-transparent py-6 text-base font-normal text-[#EEE9DF] hover:bg-[#FFB162]/10"
-                      >
-                        <Link href="#contact">Contact us</Link>
-                      </Button>
-                    </SheetClose>
+                    {/* [5] เรียกใช้ ContactModal สำหรับ Mobile (ไม่ต้องส่ง Prop ใช้ Default ปุ่มใหญ่) */}
+                    <ContactModal />
                   </div>
                 </div>
               </SheetContent>

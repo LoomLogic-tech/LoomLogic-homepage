@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import HeroSection from "@/features/main-part/components/heroSection";
+import HeroSection from '@/features/main-part/components/HeroSection';
 
 const HeroSectionContainer = () => {
   return <HeroSection />;
