@@ -1,4 +1,4 @@
-import Footer from "@/components/footer/footer";
+import Footer from "@/features/footer/components/Footer";
 
 export default function LandingLayout({ children }: { children: React.ReactNode }) {
   return (

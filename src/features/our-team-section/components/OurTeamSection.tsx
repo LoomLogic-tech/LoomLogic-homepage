@@ -32,7 +32,7 @@ export default function OurTeamSection() {
         {/* โปรไฟล์ทีม */}
         <div
           id="team-profile"
-          className="flex items-center justify-center gap-6 m-4"
+          className="flex items-center justify-center gap-6 m-4 py-16"
         >
           {/* ปุ่มซ้าย */}
           <button
@@ -60,11 +60,11 @@ export default function OurTeamSection() {
           <Swiper
             spaceBetween={30}
             slidesPerView={4}
-            slidesPerGroup={4}
+            slidesPerGroup={2}
             slidesPerGroupAuto={true}
             // centeredSlides={true}
             autoplay={{
-              delay: 20000,
+              delay: 10000,
               disableOnInteraction: false,
             }}
             // pagination={{clickable: false,}}

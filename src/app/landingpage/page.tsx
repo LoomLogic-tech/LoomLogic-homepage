@@ -1,4 +1,4 @@
-import OurTeamSection from "@/components/sections/our-team-section";
+import OurTeamSection from "@/features/our-team-section/components/OurTeamSection";
 
 export default function LandingPage() {
   return (
