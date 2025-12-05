@@ -2,7 +2,7 @@
 
 import MainNavbar, {
   NavLink,
-} from '@/features/main-part/components/main-navbar';
+} from '@/features/main-part/components/MainNavbar';
 
 const links: NavLink[] = [
   { label: 'Service', href: '#service' },

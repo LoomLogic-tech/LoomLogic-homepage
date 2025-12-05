@@ -1,6 +1,7 @@
-import MainNavbarContainer from '@/features/main-part/containers/main-navbar-container';
-import HeroSectionContainer from '@/features/main-part/containers/hero-section-container';
+import MainNavbarContainer from '@/features/main-part/containers/MainNavbarContainer';
+import HeroSectionContainer from '@/features/main-part/containers/HeroSectionContainer';
 
+// Top-level page for the "main-part" route, assembling navbar and hero.
 export default function MainPartPage() {
   return (
     <div className="relative isolate min-h-screen overflow-hidden bg-slate-950 text-slate-50">
