@@ -131,3 +131,26 @@
   }
 }
 
+/* ── Design Carousel: smooth continuous scroll ── */
+.design-carousel .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+/* ── Logo Ticker: infinite marquee ── */
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-ticker-track {
+  animation: ticker-scroll 25s linear infinite;
+}
+
+.logo-ticker-track:hover {
+  animation-play-state: paused;
+}
+

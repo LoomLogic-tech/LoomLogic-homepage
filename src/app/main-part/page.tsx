@@ -3,6 +3,9 @@ import HeroSectionContainer from '@/features/main-part/containers/HeroSectionCon
 import ServicesSection from '@/features/our-services/components/ServicesSection';
 import ProjectShowcase from '@/features/our-expertise-software-dev/components/ProjectShowcase';
 import SectionHeader from '@/features/our-expertise-software-dev/components/SectionHeader';
+import DesignCreativitySection from '@/features/design-and-creativity/components/DesignCreativitySection';
+import LogoTicker from '@/features/design-and-creativity/components/LogoTicker';
+import OurTeamSection from '@/features/our-team-section/components/OurTeamSection';
 
 // Top-level page for the "main-part" route, assembling navbar and hero.
 export default function MainPartPage() {
@@ -18,6 +21,10 @@ export default function MainPartPage() {
             <SectionHeader />
 
             <ProjectShowcase />
+
+            <DesignCreativitySection />
+            <LogoTicker />
+            <OurTeamSection />
           </section>
         </main>
       </div>
