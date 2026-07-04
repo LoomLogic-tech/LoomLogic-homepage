@@ -2,6 +2,7 @@ import MainNavbarContainer from '@/features/main-part/containers/main-navbar-con
 import HeroSectionContainer from '@/features/main-part/containers/hero-section-container';
 import ServicesSection from '@/features/our-services/components/ServicesSection';
 
+// Top-level page for the "main-part" route, assembling navbar and hero.
 export default function MainPartPage() {
   return (
     <div className="relative isolate min-h-screen overflow-hidden text-slate-50">
