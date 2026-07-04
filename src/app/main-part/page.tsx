@@ -1,5 +1,5 @@
-import MainNavbarContainer from '@/features/main-part/containers/main-navbar-container';
-import HeroSectionContainer from '@/features/main-part/containers/hero-section-container';
+import MainNavbarContainer from '@/features/main-part/containers/MainNavbarContainer';
+import HeroSectionContainer from '@/features/main-part/containers/HeroSectionContainer';
 import ServicesSection from '@/features/our-services/components/ServicesSection';
 import ProjectShowcase from '@/features/our-expertise-software-dev/components/ProjectShowcase';
 import SectionHeader from '@/features/our-expertise-software-dev/components/SectionHeader';
@@ -13,12 +13,10 @@ export default function MainPartPage() {
         <main>
           <HeroSectionContainer />
           {/* section อื่นๆ ใส่ตรงนี้เด้อสู */}
-          <section className="relative -mt-5 overflow-hidden rounded-t-3xl text-black">
+          <section className="relative -mt-5 overflow-hidden rounded-t-3xl bg-[#1B2632] text-white">
             <ServicesSection />
-            {/* Header */}
             <SectionHeader />
 
-            {/* Project Showcase */}
             <ProjectShowcase />
           </section>
         </main>

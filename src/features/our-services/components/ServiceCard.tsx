@@ -4,28 +4,29 @@ import type { ServiceItem } from "./service-data";
 
 export default function ServiceCard({ title, icon, features }: ServiceItem) {
   return (
-    <Card className="bg-[#2C3B4E1F] border border-[#70747E] rounded-2xl shadow-xl max-h-[548px]">
-      <CardContent className="px-5 py-4 space-y-2">
-        
-        {/* Icon */}
+    <Card className="h-full min-h-[548px] rounded-[18px] border border-[#70747E] bg-[#2C3B4E1F] py-0 text-white shadow-[0_14px_18px_rgba(4,10,18,0.42)]">
+      <CardContent className="flex h-full flex-col px-7 pb-7 pt-[52px] sm:px-8 lg:px-[27px]">
         <div className="flex justify-center">
-          <Image src={icon} alt={`${title} icon`} width={140} height={140} />
+          <Image
+            src={icon}
+            alt={`${title} icon`}
+            width={118}
+            height={118}
+            className="h-[118px] w-[118px] object-contain"
+          />
         </div>
 
-        {/* Title */}
-        <h3 className="text-center text-[32px] font-bold text-orange-300">
+        <h3 className="mt-[33px] text-center text-[32px] font-bold leading-tight text-[#FFB162]">
           {title}
         </h3>
 
-        {/* Feature List */}
-        <ul className="text-gray-300 text-[20px] font-normal space-y-2 text-left">
+        <ul className="mt-3 list-disc space-y-1.5 pl-5 text-left text-[21px] font-normal leading-[1.72] text-white marker:text-[10px] marker:text-white sm:pl-6">
           {features.map((text, i) => (
-            <li key={i} className="list-disc list-outside ml-8 leading-relaxed text-gray-300">
+            <li key={i} className="pl-1">
               {text}
             </li>
           ))}
         </ul>
-
       </CardContent>
     </Card>
   );
